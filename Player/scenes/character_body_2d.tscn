@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dbc8tfkw71xwl"]
+
+[ext_resource type="Script" uid="uid://ke3kjauvshjv" path="res://character_body_2d.gd" id="1_vvw5e"]
+[ext_resource type="Texture2D" uid="uid://skn713c53b66" path="res://Player/assets/[GMTK26]Tiles-1.png" id="2_inwu4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srlcf"]
+atlas = ExtResource("2_inwu4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8xio"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srlcf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s2g78"]
+radius = 5.0
+height = 12.0
+
+[node name="Robot" type="CharacterBody2D" unique_id=2077227630]
+script = ExtResource("1_vvw5e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1279370507]
+sprite_frames = SubResource("SpriteFrames_s8xio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2083593571]
+shape = SubResource("CapsuleShape2D_s2g78")
+
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=887925767]
+wait_time = 0.1
+
+[node name="DashTimer" type="Timer" parent="." unique_id=2064667334]
+wait_time = 0.12
+one_shot = true
+
+[node name="JumpBuffer" type="Timer" parent="." unique_id=877246867]
+wait_time = 0.1
+one_shot = true
