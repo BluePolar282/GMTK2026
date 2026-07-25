@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dbc8tfkw71xwl"]
 
-[ext_resource type="Script" uid="uid://ke3kjauvshjv" path="res://character_body_2d.gd" id="1_vvw5e"]
+[ext_resource type="Script" uid="uid://ke3kjauvshjv" path="res://Player/scripts/character_body_2d.gd" id="1_81s58"]
 [ext_resource type="Texture2D" uid="uid://skn713c53b66" path="res://Player/assets/[GMTK26]Tiles-1.png" id="2_inwu4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_srlcf"]
@@ -23,7 +23,7 @@ radius = 5.0
 height = 12.0
 
 [node name="Robot" type="CharacterBody2D" unique_id=2077227630]
-script = ExtResource("1_vvw5e")
+script = ExtResource("1_81s58")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1279370507]
 sprite_frames = SubResource("SpriteFrames_s8xio")
