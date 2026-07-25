@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*uid://dqxx2h5cqgcwf"
-Countdown="*uid://b8eho348dr6mn"
+Countdown="*uid://g3phf32rwjsf"
 
 [display]
 
@@ -28,6 +28,9 @@ window/stretch/aspect="expand"
 [global_group]
 
 Player=""
+Countdown=""
+Ground=""
+Meteor=""
 
 [input]
 
@@ -62,4 +65,4 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.34438846, 0.6364009, 0.8755162, 1)
+environment/defaults/default_clear_color=Color(0.43327323, 0.6933185, 0.85539234, 1)

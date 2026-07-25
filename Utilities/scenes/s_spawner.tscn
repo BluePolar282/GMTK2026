@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://pbq5yed0pulh"]
+
+[ext_resource type="Script" uid="uid://bss737g1opt42" path="res://Utilities/scripts/s_spawner.gd" id="1_msppm"]
+
+[node name="S Spawner" type="Node2D" unique_id=1912522041]
+script = ExtResource("1_msppm")
+
+[node name="Timer" type="Timer" parent="." unique_id=1246633136]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

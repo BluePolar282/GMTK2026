@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://g3phf32rwjsf"]
+
+[node name="Countdown" type="Timer" unique_id=1442462086]
+wait_time = 60.0
+one_shot = true
+autostart = true

@@ -15,12 +15,12 @@ const FRICTION = 650
 const GRAVITY = 580
 const FALL_SPEED = 300
 
-const JUMP_SPEED = -290
+const JUMP_SPEED = -240
 const JUMP_DECEL = 850
 const JUMP_STOP = 7000
-const DJUMP_SPEED = -290
+const DJUMP_SPEED = -240
 
-const DASH_SPEED = 500
+const DASH_SPEED = 550
 const DASH_DECEL = 10000
 
 var active_state := STATE.FLOOR

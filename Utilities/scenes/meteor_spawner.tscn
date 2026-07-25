@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://pl3qj1qp65nj"]
+
+[ext_resource type="Script" uid="uid://e23lneyscdx8" path="res://Utilities/scripts/meteor_spawner.gd" id="1_jdkyv"]
+
+[node name="Meteor Spawner" type="Node2D" unique_id=677491771]
+script = ExtResource("1_jdkyv")
