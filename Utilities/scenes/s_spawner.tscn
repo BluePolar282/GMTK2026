@@ -6,7 +6,7 @@
 script = ExtResource("1_msppm")
 
 [node name="Timer" type="Timer" parent="." unique_id=1246633136]
-wait_time = 5.0
+wait_time = 7.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

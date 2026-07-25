@@ -31,6 +31,7 @@ Player=""
 Countdown=""
 Ground=""
 Meteor=""
+keys=""
 
 [input]
 

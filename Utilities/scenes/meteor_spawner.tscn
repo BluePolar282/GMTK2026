@@ -4,3 +4,4 @@
 
 [node name="Meteor Spawner" type="Node2D" unique_id=677491771]
 script = ExtResource("1_jdkyv")
+spawn_rate = 1.0

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cbx6n1aso787e"]
+
+[ext_resource type="Script" uid="uid://3nsetq0fycl3" path="res://items/scripts/key.gd" id="1_kgs02"]
+[ext_resource type="Texture2D" uid="uid://ca1ffxckhv5bk" path="res://World/assets/[GMTK26]Tiles-1.png" id="2_eqmr4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s8xio"]
+radius = 4.0
+
+[node name="Key" type="Area2D" unique_id=837013481 groups=["keys"]]
+script = ExtResource("1_kgs02")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=259361728]
+texture = ExtResource("2_eqmr4")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1777873882]
+shape = SubResource("CircleShape2D_s8xio")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
