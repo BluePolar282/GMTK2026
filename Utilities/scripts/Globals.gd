@@ -1,6 +1,5 @@
 extends Node
 
-var lost = false
 var won = false
 
 signal shake_requested(amount: float)

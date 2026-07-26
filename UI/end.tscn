@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bfs1b8iig6cku"]
+
+[ext_resource type="FontFile" uid="uid://bf0pjgo6gnglq" path="res://World/assets/NewMagnetic-Regular.otf" id="1_2qsq6"]
+[ext_resource type="Script" uid="uid://cam8byvml7y7r" path="res://World/scripts/GameOver.gd" id="1_dsfsd"]
+[ext_resource type="StyleBox" uid="uid://dkhb4ly0mhx4s" path="res://UI/pressed.tres" id="2_xtytm"]
+[ext_resource type="StyleBox" uid="uid://dhk5d1kew55o7" path="res://UI/hover.tres" id="3_cs8of"]
+[ext_resource type="StyleBox" uid="uid://nr6fmaf6yscq" path="res://UI/normal.tres" id="4_yftcd"]
+
+[node name="EndScene" type="Control" unique_id=277575548]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_dsfsd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=280046099]
+position = Vector2(575, 325)
+
+[node name="OutcomeLabel" type="Label" parent="Camera2D" unique_id=1224511074]
+offset_left = -426.0
+offset_top = -186.0
+offset_right = 426.0
+offset_bottom = -36.0
+theme_override_fonts/font = ExtResource("1_2qsq6")
+theme_override_font_sizes/font_size = 150
+text = "OUTCOME"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="Camera2D" unique_id=392593008]
+offset_left = -398.0
+offset_top = 59.0
+offset_right = -73.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("1_2qsq6")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("4_yftcd")
+theme_override_styles/pressed = ExtResource("2_xtytm")
+theme_override_styles/hover = ExtResource("3_cs8of")
+text = "RETRY"
+
+[node name="MenuButton" type="Button" parent="Camera2D" unique_id=999540288]
+offset_left = 73.0
+offset_top = 59.0
+offset_right = 402.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("1_2qsq6")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("4_yftcd")
+theme_override_styles/pressed = ExtResource("2_xtytm")
+theme_override_styles/hover = ExtResource("3_cs8of")
+text = "MAIN MENU"

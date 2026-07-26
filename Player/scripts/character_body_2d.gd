@@ -160,7 +160,5 @@ func take_damage(amount: int = 1) -> void:
 		on_player_death()
 
 func on_player_death() -> void:
-	print("Game Over!")
 	Globals.won = false
-	Globals.lost = true
-	get_tree().change_scene_to_file("res://UI/GameOver.tscn")
+	get_tree().change_scene_to_file("res://UI/end.tscn")
