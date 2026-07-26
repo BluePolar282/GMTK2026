@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfs1b8iig6cku"]
 
 [ext_resource type="FontFile" uid="uid://bf0pjgo6gnglq" path="res://World/assets/NewMagnetic-Regular.otf" id="1_2qsq6"]
-[ext_resource type="Script" uid="uid://cam8byvml7y7r" path="res://World/scripts/GameOver.gd" id="1_dsfsd"]
+[ext_resource type="Script" uid="uid://cam8byvml7y7r" path="res://World/scripts/game_over.gd" id="1_dsfsd"]
 [ext_resource type="StyleBox" uid="uid://dkhb4ly0mhx4s" path="res://UI/pressed.tres" id="2_xtytm"]
 [ext_resource type="StyleBox" uid="uid://dhk5d1kew55o7" path="res://UI/hover.tres" id="3_cs8of"]
 [ext_resource type="StyleBox" uid="uid://nr6fmaf6yscq" path="res://UI/normal.tres" id="4_yftcd"]
