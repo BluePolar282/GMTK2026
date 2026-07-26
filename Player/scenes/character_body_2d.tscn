@@ -1,26 +1,42 @@
 [gd_scene format=3 uid="uid://dbc8tfkw71xwl"]
 
 [ext_resource type="Script" uid="uid://ke3kjauvshjv" path="res://Player/scripts/character_body_2d.gd" id="1_81s58"]
-[ext_resource type="Texture2D" uid="uid://skn713c53b66" path="res://Player/assets/[GMTK26]Tiles-1.png" id="2_inwu4"]
+[ext_resource type="Texture2D" uid="uid://s07c6mr5u778" path="res://Player/assets/[GMTK]robot.png" id="2_ggfj5"]
+[ext_resource type="Script" uid="uid://dj4vxwifoo7h6" path="res://Player/scenes/animated_sprite_2d.gd" id="3_djbhr"]
 [ext_resource type="Script" uid="uid://drnfvl71fv5wh" path="res://World/scripts/health_bar.gd" id="3_ggfj5"]
 [ext_resource type="Texture2D" uid="uid://0tdcuo4law4h" path="res://World/assets/Glow-PNG-File.png" id="3_rjwsl"]
-[ext_resource type="AudioStream" uid="uid://cqv083fa1618c" path="res://World/assets/sounds/hitHurt.wav" id="4_ka2co"]
-[ext_resource type="AudioStream" uid="uid://yyqih3fiv8be" path="res://World/assets/sounds/jump.wav" id="5_ggfj5"]
-[ext_resource type="AudioStream" uid="uid://d30tggdodiwco" path="res://World/assets/sounds/laserShoot.wav" id="6_ntlsg"]
+[ext_resource type="AudioStream" uid="uid://cwnwmrtmb6tma" path="res://World/assets/sounds/hitHurt.wav" id="4_ka2co"]
+[ext_resource type="AudioStream" uid="uid://rncpr8q31rv8" path="res://World/assets/sounds/jump.wav" id="5_ggfj5"]
+[ext_resource type="AudioStream" uid="uid://dsui46bcqf27d" path="res://World/assets/sounds/laserShoot.wav" id="6_ntlsg"]
+[ext_resource type="Script" uid="uid://ccu2q0lbleu6k" path="res://Player/scenes/sprite_trail.gd" id="9_isi1h"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_srlcf"]
-atlas = ExtResource("2_inwu4")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntlsg"]
+atlas = ExtResource("2_ggfj5")
 region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djbhr"]
+atlas = ExtResource("2_ggfj5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isi1h"]
+atlas = ExtResource("2_ggfj5")
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s8xio"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_srlcf")
+"texture": SubResource("AtlasTexture_ntlsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djbhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isi1h")
 }],
-"loop": 1,
+"loop": 2,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s2g78"]
@@ -32,6 +48,9 @@ script = ExtResource("1_81s58")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1279370507]
 sprite_frames = SubResource("SpriteFrames_s8xio")
+autoplay = "default"
+frame_progress = 0.5755322
+script = ExtResource("3_djbhr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2083593571]
 shape = SubResource("CapsuleShape2D_s2g78")
@@ -73,3 +92,6 @@ pitch_scale = 0.74
 
 [node name="dash" type="AudioStreamPlayer2D" parent="." unique_id=581611596]
 stream = ExtResource("6_ntlsg")
+
+[node name="SpriteTrail" type="Node2D" parent="." unique_id=1281157779]
+script = ExtResource("9_isi1h")

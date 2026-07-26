@@ -32,6 +32,7 @@ var can_dash := false
 var saved_position := Vector2.ZERO
 var current_dir = 1
 var health := MAX_HEALTH
+var dashing = false
 
 signal died
 
@@ -87,10 +88,13 @@ func switch_state(to_state: STATE) -> void:
 			sprite.play("fall")
 		
 		STATE.DASH:
+			dashing = true
 			$dash.play()
 			sprite.play("dash")
 			velocity.y = 0
 			velocity.x = DASH_SPEED * current_dir
+			await get_tree().create_timer(0.5).timeout
+			dashing = false
 			
 func process_state(delta: float) -> void:
 	var sprite = $AnimatedSprite2D
