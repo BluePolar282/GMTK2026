@@ -67,4 +67,4 @@ rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 viewport/hdr_2d=true
-environment/defaults/default_clear_color=Color(0.033707324, 0.113131545, 0.15918902, 1)
+environment/defaults/default_clear_color=Color(0.015766865, 0.054664135, 0.100058176, 1)
