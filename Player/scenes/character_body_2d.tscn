@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ke3kjauvshjv" path="res://Player/scripts/character_body_2d.gd" id="1_81s58"]
 [ext_resource type="Texture2D" uid="uid://skn713c53b66" path="res://Player/assets/[GMTK26]Tiles-1.png" id="2_inwu4"]
+[ext_resource type="Texture2D" uid="uid://0tdcuo4law4h" path="res://World/assets/Glow-PNG-File.png" id="3_rjwsl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_srlcf"]
 atlas = ExtResource("2_inwu4")
@@ -41,3 +42,8 @@ one_shot = true
 [node name="JumpBuffer" type="Timer" parent="." unique_id=877246867]
 wait_time = 0.1
 one_shot = true
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=434540106]
+energy = 0.6
+texture = ExtResource("3_rjwsl")
+texture_scale = 0.05

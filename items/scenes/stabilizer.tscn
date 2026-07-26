@@ -2,12 +2,18 @@
 
 [ext_resource type="Script" uid="uid://d2g5fyttmxp04" path="res://items/scripts/stabilizer.gd" id="1_7gnnk"]
 [ext_resource type="Texture2D" uid="uid://ca1ffxckhv5bk" path="res://World/assets/[GMTK26]Tiles-1.png" id="2_hxr0s"]
+[ext_resource type="Texture2D" uid="uid://0tdcuo4law4h" path="res://World/assets/Glow-PNG-File.png" id="3_hxr0s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fbsom"]
 radius = 5.0
 
 [node name="stabilizer" type="Area2D" unique_id=1934163364]
 script = ExtResource("1_7gnnk")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=732261539]
+energy = 0.6
+texture = ExtResource("3_hxr0s")
+texture_scale = 0.04
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=482352252]
 texture = ExtResource("2_hxr0s")

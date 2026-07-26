@@ -2,12 +2,18 @@
 
 [ext_resource type="Script" uid="uid://3nsetq0fycl3" path="res://items/scripts/key.gd" id="1_kgs02"]
 [ext_resource type="Texture2D" uid="uid://ca1ffxckhv5bk" path="res://World/assets/[GMTK26]Tiles-1.png" id="2_eqmr4"]
+[ext_resource type="Texture2D" uid="uid://0tdcuo4law4h" path="res://World/assets/Glow-PNG-File.png" id="3_eqmr4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s8xio"]
 radius = 4.0
 
 [node name="Key" type="Area2D" unique_id=837013481 groups=["keys"]]
 script = ExtResource("1_kgs02")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1064753516]
+energy = 0.7
+texture = ExtResource("3_eqmr4")
+texture_scale = 0.05
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=259361728]
 texture = ExtResource("2_eqmr4")
