@@ -54,7 +54,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8xio"]
 size = Vector2(25, 29)
 
-[node name="door" type="Area2D" unique_id=1646082823]
+[node name="Door" type="Area2D" unique_id=1646082823]
 script = ExtResource("1_tcg36")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2134814846]

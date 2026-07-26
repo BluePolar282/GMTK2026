@@ -23,15 +23,19 @@ const DJUMP_SPEED = -240
 const DASH_SPEED = 550
 const DASH_DECEL = 10000
 
+const MAX_HEALTH = 3
+
 var active_state := STATE.FLOOR
 var playing_anim := false
 var can_DJump := false
 var can_dash := false
 var saved_position := Vector2.ZERO
 var current_dir = 1
+var health := MAX_HEALTH
 
 func _ready() -> void:
 	switch_state(STATE.FLOOR)
+	add_to_group("Player")
  
 func _physics_process(delta: float) -> void:
 	process_state(delta)
@@ -138,5 +142,16 @@ func process_state(delta: float) -> void:
 		STATE.DASH:
 			velocity.x = move_toward(velocity.x, 0, DASH_DECEL * delta)
 			switch_state(STATE.FALL)
-			
+
+func take_damage(amount: int = 1) -> void:
+	health -= amount
+	health = max(0, health)
+	print("Player hit! Health: %d/%d" % [health, MAX_HEALTH])
+	
+	if health <= 0:
+		on_player_death()
+
+func on_player_death() -> void:
+	print("Game Over!")
+	# TODO: Implement game over state
 			
