@@ -6,7 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://nr6fmaf6yscq" path="res://UI/normal.tres" id="5_ev3b6"]
 [ext_resource type="StyleBox" uid="uid://dkhb4ly0mhx4s" path="res://UI/pressed.tres" id="6_k0a0m"]
 [ext_resource type="StyleBox" uid="uid://dhk5d1kew55o7" path="res://UI/hover.tres" id="7_2mudq"]
-[ext_resource type="AudioStream" uid="uid://cetlr3gq4e6i5" path="res://World/assets/sounds/click.wav" id="7_ev3b6"]
+[ext_resource type="AudioStream" uid="uid://r8b2msgbl3yx" path="res://World/assets/sounds/click.wav" id="7_ev3b6"]
 
 [node name="Main Menu" type="Control" unique_id=2328936]
 layout_mode = 3
