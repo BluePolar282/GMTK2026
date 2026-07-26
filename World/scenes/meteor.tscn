@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b4f42e5asqjmq" path="res://World/scripts/meteor.gd" id="1_agiga"]
 [ext_resource type="Texture2D" uid="uid://dwql1wx6vupc6" path="res://World/assets/[GMTK]Meteor.png" id="2_od3xk"]
 [ext_resource type="Texture2D" uid="uid://0tdcuo4law4h" path="res://World/assets/Glow-PNG-File.png" id="3_py4ea"]
+[ext_resource type="AudioStream" uid="uid://kcf6n0urhqa" path="res://World/assets/sounds/freesound_community-pixel-sound-effect-3-82880.mp3" id="4_4lkaw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_stmb3"]
 atlas = ExtResource("2_od3xk")
@@ -109,6 +110,9 @@ color = Color(0.93199295, 0.9290115, 0, 1)
 energy = 0.4
 texture = ExtResource("3_py4ea")
 texture_scale = 0.05
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=961114884]
+stream = ExtResource("4_4lkaw")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1685514938]
 self_modulate = Color(1.6197081, 1.6197081, 1.6197081, 1)

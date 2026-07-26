@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Globals="*uid://dqxx2h5cqgcwf"
 Countdown="*uid://g3phf32rwjsf"
+Transition="*uid://cv7x08701dfns"
 
 [display]
 

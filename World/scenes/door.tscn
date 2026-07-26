@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wrm7l2ylcmbi" path="res://World/scripts/door.gd" id="1_tcg36"]
 [ext_resource type="Texture2D" uid="uid://dhmk24qky1jen" path="res://World/assets/[GMTK26]Door.png" id="2_6cnsq"]
+[ext_resource type="AudioStream" uid="uid://bye2c0dq2s0yh" path="res://World/assets/sounds/freesound_community-scifi-door-opening-36171.mp3" id="3_6cnsq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlot8"]
 atlas = ExtResource("2_6cnsq")
@@ -65,5 +66,8 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=326304513]
 position = Vector2(11.5, 1.5)
 shape = SubResource("RectangleShape2D_s8xio")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1129928512]
+stream = ExtResource("3_6cnsq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

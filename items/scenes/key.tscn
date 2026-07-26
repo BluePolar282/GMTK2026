@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://3nsetq0fycl3" path="res://items/scripts/key.gd" id="1_kgs02"]
 [ext_resource type="Texture2D" uid="uid://ca1ffxckhv5bk" path="res://World/assets/[GMTK26]Tiles-1.png" id="2_eqmr4"]
 [ext_resource type="Texture2D" uid="uid://0tdcuo4law4h" path="res://World/assets/Glow-PNG-File.png" id="3_eqmr4"]
+[ext_resource type="AudioStream" uid="uid://bfcncu5rg5bea" path="res://World/assets/sounds/pickupCoin.wav" id="4_qj381"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s8xio"]
 radius = 4.0
@@ -46,6 +47,10 @@ scale_amount_min = 3.0
 scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_eqmr4")
 color = Color(0.7217464, 0.85445356, 1, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=246535246]
+stream = ExtResource("4_qj381")
+pitch_scale = 1.56
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

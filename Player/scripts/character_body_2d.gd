@@ -72,12 +72,14 @@ func switch_state(to_state: STATE) -> void:
 			can_DJump = true
 			can_dash = true
 		STATE.JUMP:
+			$jump.play()
 			sprite.play("jump")
 			velocity.y = JUMP_SPEED
 			$CoyoteTimer.stop()
 			$JumpBuffer.stop()
 			
 		STATE.DJUMP:
+			$jump.play()
 			sprite.play("djump")
 			velocity.y = DJUMP_SPEED
 			can_DJump = false
@@ -85,6 +87,7 @@ func switch_state(to_state: STATE) -> void:
 			sprite.play("fall")
 		
 		STATE.DASH:
+			$dash.play()
 			sprite.play("dash")
 			velocity.y = 0
 			velocity.x = DASH_SPEED * current_dir
@@ -146,6 +149,7 @@ func process_state(delta: float) -> void:
 			switch_state(STATE.FALL)
 
 func take_damage(amount: int = 1) -> void:
+	$hurt.play()
 	health -= amount
 	health = max(0, health)
 	$HealthBar.visible = true

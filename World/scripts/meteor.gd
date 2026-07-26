@@ -26,6 +26,8 @@ func _on_area_entered(area: Area2D) -> void:
 		explode()
 		
 func explode():
+	$AudioStreamPlayer2D.pitch_scale = randf_range(0.9, 1.1)
+	$AudioStreamPlayer2D.play()
 	$AnimatedSprite2D.visible = false
 	$Sprite2D.visible = false
 	$CPUParticles2D.emitting = true

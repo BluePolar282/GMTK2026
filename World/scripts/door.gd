@@ -3,6 +3,7 @@ extends Area2D
 var can_exit = false
 
 func open_door():
+	$AudioStreamPlayer2D.play()
 	$AnimatedSprite2D.play("open")
 	can_exit = true
 	

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bmqadp5k7olj7"]
+
+[ext_resource type="Script" uid="uid://cv7x08701dfns" path="res://transition.gd" id="1_inf52"]
+
+[sub_resource type="Animation" id="Animation_x2rwd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_253a1"]
+resource_name = "black-to-fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_64y4x"]
+resource_name = "fade-to-black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333336, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7rvpx"]
+_data = {
+&"RESET": SubResource("Animation_x2rwd"),
+&"black-to-fade": SubResource("Animation_253a1"),
+&"fade-to-black": SubResource("Animation_64y4x")
+}
+
+[node name="Transition" type="CanvasLayer" unique_id=183009346]
+script = ExtResource("1_inf52")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1271856407]
+offset_right = 1160.0
+offset_bottom = 642.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1097284140]
+root_node = NodePath("../ColorRect")
+libraries/ = SubResource("AnimationLibrary_7rvpx")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
