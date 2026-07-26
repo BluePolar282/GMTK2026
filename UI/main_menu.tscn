@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bob34npi6srpc" path="res://UI/main_menu.gd" id="1_d8nwk"]
 [ext_resource type="Texture2D" uid="uid://wbsfoo2f4oja" path="res://World/assets/[GMTK]Background.png" id="2_4cwpn"]
-[ext_resource type="FontFile" uid="uid://bf0pjgo6gnglq" path="res://World/assets/NewMagnetic-Regular.otf" id="3_f40uw"]
+[ext_resource type="FontFile" uid="uid://d3bmr5jqtkw20" path="res://World/assets/NewMagnetic-Regular.otf" id="3_f40uw"]
+[ext_resource type="Texture2D" uid="uid://yye0dmkgtmgk" path="res://Player/assets/Black-Fade-PNG-Isolated-File.png" id="3_k0a0m"]
 [ext_resource type="StyleBox" uid="uid://nr6fmaf6yscq" path="res://UI/normal.tres" id="5_ev3b6"]
 [ext_resource type="StyleBox" uid="uid://dkhb4ly0mhx4s" path="res://UI/pressed.tres" id="6_k0a0m"]
 [ext_resource type="StyleBox" uid="uid://dhk5d1kew55o7" path="res://UI/hover.tres" id="7_2mudq"]
-[ext_resource type="AudioStream" uid="uid://r8b2msgbl3yx" path="res://World/assets/sounds/click.wav" id="7_ev3b6"]
+[ext_resource type="AudioStream" uid="uid://cetlr3gq4e6i5" path="res://World/assets/sounds/click.wav" id="7_ev3b6"]
 
 [node name="Main Menu" type="Control" unique_id=2328936]
 layout_mode = 3
@@ -21,6 +22,11 @@ script = ExtResource("1_d8nwk")
 position = Vector2(257, 142)
 scale = Vector2(1.245, 1.245)
 texture = ExtResource("2_4cwpn")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1532332342]
+position = Vector2(270.75, 201)
+scale = Vector2(0.5242188, 0.205)
+texture = ExtResource("3_k0a0m")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1949922073]
 position = Vector2(235, 149)
