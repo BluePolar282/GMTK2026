@@ -53,6 +53,6 @@ max_value = 5.0
 show_percentage = false
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=434540106]
-energy = 0.6
+energy = 0.3
 texture = ExtResource("3_rjwsl")
 texture_scale = 0.05
