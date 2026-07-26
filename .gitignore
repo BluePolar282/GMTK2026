@@ -4,6 +4,7 @@
 
 # Godot-specific ignores
 .import/
+*.import
 export.cfg
 export_credentials.cfg
 *.tmp
@@ -15,10 +16,3 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
-World/assets/\[GMTK26\]Door.png.import
-World/assets/\[GMTK26\]Tiles-1.png.import
-World/assets/\[GMTK\]Meteor.png.import
-Player/assets/\[GMTK26\]Tiles-1.png.import
-World/assets/\[GMTK26\]Door.png.import
-World/assets/\[GMTK26\]Tiles-1.png.import
-World/assets/\[GMTK\]Meteor.png.import
