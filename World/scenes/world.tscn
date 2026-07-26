@@ -578,7 +578,7 @@ distance = 45.0
 [node name="World" type="Node2D" unique_id=489378558]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1483600630]
-color = Color(0.66570616, 0.7456006, 0.88621616, 1)
+color = Color(0.7695296, 0.7347382, 0.7068363, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1157851688]
 environment = SubResource("Environment_s8xio")

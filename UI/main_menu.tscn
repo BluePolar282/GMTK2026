@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://wbsfoo2f4oja" path="res://World/assets/[GMTK]Background.png" id="2_4cwpn"]
 [ext_resource type="FontFile" uid="uid://d3bmr5jqtkw20" path="res://World/assets/NewMagnetic-Regular.otf" id="3_f40uw"]
 [ext_resource type="Script" uid="uid://s1u4x5tbc4qg" path="res://UI/menu_camera.gd" id="4_4cwpn"]
+[ext_resource type="StyleBox" uid="uid://nr6fmaf6yscq" path="res://UI/normal.tres" id="5_ev3b6"]
+[ext_resource type="StyleBox" uid="uid://dkhb4ly0mhx4s" path="res://UI/pressed.tres" id="6_k0a0m"]
+[ext_resource type="StyleBox" uid="uid://dhk5d1kew55o7" path="res://UI/hover.tres" id="7_2mudq"]
 
 [node name="Main Menu" type="Control" unique_id=2328936]
 layout_mode = 3
@@ -15,22 +18,36 @@ grow_vertical = 2
 script = ExtResource("1_d8nwk")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1221708668]
-position = Vector2(233, 144)
+position = Vector2(257, 142)
+scale = Vector2(1.245, 1.245)
 texture = ExtResource("2_4cwpn")
 
-[node name="Label" type="Label" parent="." unique_id=1445139880]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 18.0
-offset_right = 178.0
-offset_bottom = 117.0
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1949922073]
+position = Vector2(235, 149)
+zoom = Vector2(2.3, 2.3)
+script = ExtResource("4_4cwpn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1093531938]
+offset = Vector2(43.39, 0)
+scale = Vector2(2.18, 2.18)
+transform = Transform2D(2.18, 0, 0, 2.18, 43.39, 0)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1445139880]
+anchors_preset = -1
+anchor_left = 0.016
+anchor_top = 0.028
+anchor_right = 0.155
+anchor_bottom = 0.18100001
+offset_left = -0.4320011
+offset_top = -0.144001
+offset_right = -0.55999756
+offset_bottom = -0.28800964
 theme_override_fonts/font = ExtResource("3_f40uw")
 theme_override_font_sizes/font_size = 47
 text = "Untitled
 Game"
 
-[node name="Button" type="Button" parent="." unique_id=455566793]
-layout_mode = 1
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=455566793]
 anchors_preset = -1
 anchor_left = 0.015000001
 anchor_top = 0.09200001
@@ -40,10 +57,15 @@ offset_left = 3.7199993
 offset_top = 70.383995
 offset_right = 132.72
 offset_bottom = 102.383995
-text = "Start"
+theme_override_colors/font_color = Color(0.94669336, 0.9169148, 0.8767721, 1)
+theme_override_fonts/font = ExtResource("3_f40uw")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = ExtResource("5_ev3b6")
+theme_override_styles/pressed = ExtResource("6_k0a0m")
+theme_override_styles/hover = ExtResource("7_2mudq")
+text = "start"
 
-[node name="Button2" type="Button" parent="." unique_id=688486057]
-layout_mode = 1
+[node name="Button2" type="Button" parent="CanvasLayer" unique_id=688486057]
 anchors_preset = -1
 anchor_left = 0.015000001
 anchor_top = 0.09200001
@@ -53,11 +75,11 @@ offset_left = 3.7199993
 offset_top = 127.383995
 offset_right = 132.72
 offset_bottom = 159.384
-text = "Quit"
+theme_override_fonts/font = ExtResource("3_f40uw")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = ExtResource("5_ev3b6")
+theme_override_styles/pressed = ExtResource("6_k0a0m")
+theme_override_styles/hover = ExtResource("7_2mudq")
+text = "tutorial"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1949922073]
-position = Vector2(235, 149)
-zoom = Vector2(2.3, 2.3)
-script = ExtResource("4_4cwpn")
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

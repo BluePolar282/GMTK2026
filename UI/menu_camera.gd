@@ -1,7 +1,7 @@
 extends Camera2D
 
 @export var wind_speed: float = 1.0
-@export var wind_strength: float = 3.0  # pixels
+@export var wind_strength: float = 2.0  # pixels
 
 func _process(delta: float) -> void:
 	var t = Time.get_ticks_msec() / 1000.0 * wind_speed
