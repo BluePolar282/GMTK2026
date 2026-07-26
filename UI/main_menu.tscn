@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://l0tik4mhi750"]
+
+[ext_resource type="Script" uid="uid://bob34npi6srpc" path="res://UI/main_menu.gd" id="1_d8nwk"]
+[ext_resource type="Texture2D" uid="uid://wbsfoo2f4oja" path="res://World/assets/[GMTK]Background.png" id="2_4cwpn"]
+[ext_resource type="FontFile" uid="uid://d3bmr5jqtkw20" path="res://World/assets/NewMagnetic-Regular.otf" id="3_f40uw"]
+[ext_resource type="Script" uid="uid://s1u4x5tbc4qg" path="res://UI/menu_camera.gd" id="4_4cwpn"]
+
+[node name="Main Menu" type="Control" unique_id=2328936]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d8nwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1221708668]
+position = Vector2(233, 144)
+texture = ExtResource("2_4cwpn")
+
+[node name="Label" type="Label" parent="." unique_id=1445139880]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 178.0
+offset_bottom = 117.0
+theme_override_fonts/font = ExtResource("3_f40uw")
+theme_override_font_sizes/font_size = 47
+text = "Untitled
+Game"
+
+[node name="Button" type="Button" parent="." unique_id=455566793]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015000001
+anchor_top = 0.09200001
+anchor_right = 0.015000001
+anchor_bottom = 0.09200001
+offset_left = 3.7199993
+offset_top = 70.383995
+offset_right = 132.72
+offset_bottom = 102.383995
+text = "Start"
+
+[node name="Button2" type="Button" parent="." unique_id=688486057]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015000001
+anchor_top = 0.09200001
+anchor_right = 0.015000001
+anchor_bottom = 0.09200001
+offset_left = 3.7199993
+offset_top = 127.383995
+offset_right = 132.72
+offset_bottom = 159.384
+text = "Quit"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1949922073]
+position = Vector2(235, 149)
+zoom = Vector2(2.3, 2.3)
+script = ExtResource("4_4cwpn")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

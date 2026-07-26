@@ -23,7 +23,7 @@ const DJUMP_SPEED = -240
 const DASH_SPEED = 550
 const DASH_DECEL = 10000
 
-const MAX_HEALTH = 3
+const MAX_HEALTH = 5
 
 var active_state := STATE.FLOOR
 var playing_anim := false
@@ -146,7 +146,13 @@ func process_state(delta: float) -> void:
 func take_damage(amount: int = 1) -> void:
 	health -= amount
 	health = max(0, health)
-	print("Player hit! Health: %d/%d" % [health, MAX_HEALTH])
+	$HealthBar.visible = true
+	self.modulate = Color(100, 100, 100)
+	await get_tree().create_timer(0.1).timeout
+	self.modulate = Color(1, 1, 1)
+	Globals.shake(2.5)
+	await get_tree().create_timer(2).timeout
+	$HealthBar.visible = false
 	
 	if health <= 0:
 		on_player_death()

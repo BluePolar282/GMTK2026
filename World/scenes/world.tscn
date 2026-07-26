@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://b8r82bxqwyfrl" path="res://World/scenes/door.tscn" id="3_80wqv"]
 [ext_resource type="Script" uid="uid://3uelnqifh3a8" path="res://World/scripts/progress_bar.gd" id="3_85j0e"]
 [ext_resource type="PackedScene" uid="uid://g3phf32rwjsf" path="res://World/scenes/countdown.tscn" id="5_arotb"]
+[ext_resource type="Script" uid="uid://colqxq3tgyca5" path="res://World/scenes/camera_2d.gd" id="5_j7d7c"]
 [ext_resource type="PackedScene" uid="uid://batnc3mu2wj73" path="res://items/scenes/stabilizer.tscn" id="5_xuvl0"]
 [ext_resource type="PackedScene" uid="uid://w8xon6kmel45" path="res://Utilities/scenes/k_spawner.tscn" id="6_52sib"]
 [ext_resource type="PackedScene" uid="uid://pbq5yed0pulh" path="res://Utilities/scenes/s_spawner.tscn" id="6_arotb"]
+[ext_resource type="FontFile" uid="uid://d3bmr5jqtkw20" path="res://World/assets/NewMagnetic-Regular.otf" id="6_efrwn"]
 [ext_resource type="PackedScene" uid="uid://pl3qj1qp65nj" path="res://Utilities/scenes/meteor_spawner.tscn" id="7_1hdkk"]
 [ext_resource type="Script" uid="uid://c500omjyjxul8" path="res://World/scripts/door_bar.gd" id="9_rjrxf"]
 
@@ -570,6 +572,9 @@ size = Vector2(95, 22)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcms0"]
 size = Vector2(62, 18.5)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s8xio"]
+distance = 45.0
+
 [node name="World" type="Node2D" unique_id=489378558]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1483600630]
@@ -605,26 +610,15 @@ tile_set = SubResource("TileSet_s8xio")
 [node name="CharacterBody2D" parent="." unique_id=2077227630 groups=["Player"] instance=ExtResource("2_85j0e")]
 position = Vector2(0, -87)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1720920103]
-position = Vector2(-1.0000019, -2)
-rotation = -0.22598511
-zoom = Vector2(2.6, 2.6)
-limit_left = -242
-limit_top = -370
-limit_right = 242
-limit_bottom = -21
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D" unique_id=1963985965]
+zoom = Vector2(2.7, 2.7)
+limit_left = -220
+limit_top = -372
+limit_right = 221
+limit_bottom = -39
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 1.47
-
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1369410481]
-offset_left = -71.0
-offset_top = -298.0
-offset_right = 72.0
-offset_bottom = -271.0
-max_value = 60.0
-rounded = true
-script = ExtResource("3_85j0e")
+script = ExtResource("5_j7d7c")
 
 [node name="stabilizer" parent="." unique_id=1934163364 instance=ExtResource("5_xuvl0")]
 position = Vector2(87, -119)
@@ -682,12 +676,41 @@ position = Vector2(0, -246.25)
 shape = SubResource("RectangleShape2D_qcms0")
 
 [node name="Door Bar" type="ProgressBar" parent="." unique_id=2050136237]
-offset_left = -158.0
-offset_top = -116.0
-offset_right = -122.0
-offset_bottom = -109.0
+self_modulate = Color(15.57226, 15.57226, 15.57226, 0.95800006)
+offset_left = -159.0
+offset_top = -118.0
+offset_right = -123.0
+offset_bottom = -111.0
 max_value = 5.0
 show_percentage = false
 script = ExtResource("9_rjrxf")
+
+[node name="Meteor Bottom" type="Area2D" parent="." unique_id=197340460 groups=["Meteor Bottom"]]
+position = Vector2(0, -45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meteor Bottom" unique_id=1009599903]
+position = Vector2(1, 21)
+shape = SubResource("WorldBoundaryShape2D_s8xio")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1204816309]
+follow_viewport_enabled = true
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1369410481]
+self_modulate = Color(3.5629182, 3.5629182, 3.5629182, 1)
+anchors_preset = -1
+anchor_left = -0.062000003
+anchor_top = -0.43500003
+anchor_right = 0.063
+anchor_bottom = -0.409
+offset_left = 15.424004
+offset_top = -3.1199646
+offset_right = -16.576004
+offset_bottom = -6.967987
+theme_override_fonts/font = ExtResource("6_efrwn")
+max_value = 60.0
+step = 1.0
+rounded = true
+show_percentage = false
+script = ExtResource("3_85j0e")
 
 [connection signal="open" from="Door Bar" to="door" method="_on_door_bar_open"]

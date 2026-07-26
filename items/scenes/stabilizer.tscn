@@ -7,6 +7,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_fbsom"]
 radius = 5.0
 
+[sub_resource type="Curve" id="Curve_hxr0s"]
+_data = [Vector2(0.15957448, 0.97752815), 0.0, 0.0, 0, 0, Vector2(1, 0.21348321), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="stabilizer" type="Area2D" unique_id=1934163364]
 script = ExtResource("1_7gnnk")
 
@@ -26,6 +30,26 @@ shape = SubResource("CircleShape2D_fbsom")
 [node name="Despawn Timer" type="Timer" parent="." unique_id=1583389151]
 wait_time = 5.0
 one_shot = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=972084600]
+self_modulate = Color(1.6197081, 1.6197081, 1.6197081, 1)
+emitting = false
+amount = 12
+lifetime = 0.12
+one_shot = true
+speed_scale = 0.3
+explosiveness = 0.61
+randomness = 0.32
+lifetime_randomness = 0.44
+direction = Vector2(0.5, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 143.11
+initial_velocity_max = 261.92
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_hxr0s")
+color = Color(0.38551658, 0.6908023, 1, 1)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
