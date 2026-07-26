@@ -1,6 +1,11 @@
 extends Control
 
 func _ready() -> void:
+	if Globals.won:
+		$Panel/Label.text = "You Win!"
+	elif Globals.lost:
+		$Panel/Label.text = "Game Over"
+	
 	$Panel/RetryButton.pressed.connect(_on_retry_pressed)
 	$Panel/MenuButton.pressed.connect(_on_menu_pressed)
 

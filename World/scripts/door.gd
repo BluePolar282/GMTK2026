@@ -9,7 +9,9 @@ func open_door():
 func _on_body_entered(body: Node2D) -> void:
 	if can_exit:
 		if body.is_in_group("Player"):
-			print("yay")
-			
+			Globals.lost = false
+			Globals.won = true
+			get_tree().change_scene_to_file("res://UI/GameOver.tscn")
+
 func _on_door_bar_open() -> void:
 	open_door()
