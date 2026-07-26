@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://4y0tqny2l6hk"]
+
+[ext_resource type="Script" uid="uid://cam8byvml7y7r" path="res://World/scripts/GameOver.gd" id="1_vjbsa"]
+[ext_resource type="FontFile" uid="uid://bf0pjgo6gnglq" path="res://World/assets/NewMagnetic-Regular.otf" id="2_vohf5"]
+
+[node name="GameOver" type="Control" unique_id=543720911]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vjbsa")
+
+[node name="Panel" type="Panel" parent="." unique_id=407768313]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 650.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=1487086001]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.246
+anchor_right = 0.5
+anchor_bottom = 0.246
+offset_left = -371.5
+offset_top = 28.09999
+offset_right = 409.5
+offset_bottom = 202.09999
+theme_override_fonts/font = ExtResource("2_vohf5")
+theme_override_font_sizes/font_size = 138
+text = "GAME OVER"
+
+[node name="RetryButton" type="Button" parent="Panel" unique_id=1774850025]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 373.0
+offset_right = 389.0
+offset_bottom = 457.0
+theme_override_font_sizes/font_size = 55
+text = "Retry"
+
+[node name="MenuButton" type="Button" parent="Panel" unique_id=2132822825]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 650.0
+offset_top = 374.0
+offset_right = 958.0
+offset_bottom = 458.0
+theme_override_font_sizes/font_size = 55
+text = "Main Menu"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=555457779]
+position = Vector2(576, 322)
