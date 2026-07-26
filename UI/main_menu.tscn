@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bob34npi6srpc" path="res://UI/main_menu.gd" id="1_d8nwk"]
 [ext_resource type="Texture2D" uid="uid://wbsfoo2f4oja" path="res://World/assets/[GMTK]Background.png" id="2_4cwpn"]
-[ext_resource type="FontFile" uid="uid://d3bmr5jqtkw20" path="res://World/assets/NewMagnetic-Regular.otf" id="3_f40uw"]
+[ext_resource type="FontFile" uid="uid://bf0pjgo6gnglq" path="res://World/assets/NewMagnetic-Regular.otf" id="3_f40uw"]
 [ext_resource type="Script" uid="uid://s1u4x5tbc4qg" path="res://UI/menu_camera.gd" id="4_4cwpn"]
 [ext_resource type="StyleBox" uid="uid://nr6fmaf6yscq" path="res://UI/normal.tres" id="5_ev3b6"]
 [ext_resource type="StyleBox" uid="uid://dkhb4ly0mhx4s" path="res://UI/pressed.tres" id="6_k0a0m"]

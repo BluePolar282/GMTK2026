@@ -33,6 +33,8 @@ var saved_position := Vector2.ZERO
 var current_dir = 1
 var health := MAX_HEALTH
 
+signal died
+
 func _ready() -> void:
 	switch_state(STATE.FLOOR)
 	add_to_group("Player")
@@ -151,13 +153,12 @@ func take_damage(amount: int = 1) -> void:
 	await get_tree().create_timer(0.1).timeout
 	self.modulate = Color(1, 1, 1)
 	Globals.shake(2.5)
-	await get_tree().create_timer(2).timeout
-	$HealthBar.visible = false
-	
-	if health <= 0:
+	if health > 0:
+		await get_tree().create_timer(2).timeout
+		$HealthBar.visible = false
+	else:
 		on_player_death()
 
 func on_player_death() -> void:
 	print("Game Over!")
-	# TODO: Implement game over state
-			
+	get_tree().change_scene_to_file("res://UI/GameOver.tscn")

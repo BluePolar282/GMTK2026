@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://batnc3mu2wj73" path="res://items/scenes/stabilizer.tscn" id="5_xuvl0"]
 [ext_resource type="PackedScene" uid="uid://w8xon6kmel45" path="res://Utilities/scenes/k_spawner.tscn" id="6_52sib"]
 [ext_resource type="PackedScene" uid="uid://pbq5yed0pulh" path="res://Utilities/scenes/s_spawner.tscn" id="6_arotb"]
-[ext_resource type="FontFile" uid="uid://d3bmr5jqtkw20" path="res://World/assets/NewMagnetic-Regular.otf" id="6_efrwn"]
+[ext_resource type="FontFile" uid="uid://bf0pjgo6gnglq" path="res://World/assets/NewMagnetic-Regular.otf" id="6_efrwn"]
 [ext_resource type="PackedScene" uid="uid://pl3qj1qp65nj" path="res://Utilities/scenes/meteor_spawner.tscn" id="7_1hdkk"]
 [ext_resource type="Script" uid="uid://c500omjyjxul8" path="res://World/scripts/door_bar.gd" id="9_rjrxf"]
 
@@ -578,7 +578,7 @@ distance = 45.0
 [node name="World" type="Node2D" unique_id=489378558]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1483600630]
-color = Color(0.7695296, 0.7347382, 0.7068363, 1)
+color = Color(0.6370812, 0.65848345, 0.78632176, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1157851688]
 environment = SubResource("Environment_s8xio")
