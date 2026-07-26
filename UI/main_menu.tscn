@@ -6,6 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://nr6fmaf6yscq" path="res://UI/normal.tres" id="5_ev3b6"]
 [ext_resource type="StyleBox" uid="uid://dkhb4ly0mhx4s" path="res://UI/pressed.tres" id="6_k0a0m"]
 [ext_resource type="StyleBox" uid="uid://dhk5d1kew55o7" path="res://UI/hover.tres" id="7_2mudq"]
+[ext_resource type="AudioStream" uid="uid://cetlr3gq4e6i5" path="res://World/assets/sounds/click.wav" id="7_ev3b6"]
 
 [node name="Main Menu" type="Control" unique_id=2328936]
 layout_mode = 3
@@ -58,6 +59,11 @@ theme_override_styles/normal = ExtResource("5_ev3b6")
 theme_override_styles/pressed = ExtResource("6_k0a0m")
 theme_override_styles/hover = ExtResource("7_2mudq")
 text = "start"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=756064819]
+position = Vector2(23, 231)
+stream = ExtResource("7_ev3b6")
+volume_db = 7.776
 
 [node name="Button2" type="Button" parent="." unique_id=688486057]
 layout_mode = 1
