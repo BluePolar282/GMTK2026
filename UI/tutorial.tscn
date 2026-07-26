@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://c8biimsifmjgb"]
+
+[ext_resource type="FontFile" uid="uid://d3bmr5jqtkw20" path="res://World/assets/NewMagnetic-Regular.otf" id="1_c6il8"]
+[ext_resource type="Script" uid="uid://s53mpnsllfrv" path="res://UI/tutorial.gd" id="1_m8qsh"]
+[ext_resource type="Texture2D" uid="uid://ca1ffxckhv5bk" path="res://World/assets/[GMTK26]Tiles-1.png" id="2_7m0sj"]
+[ext_resource type="Texture2D" uid="uid://dwql1wx6vupc6" path="res://World/assets/[GMTK]Meteor.png" id="3_nsmic"]
+[ext_resource type="StyleBox" uid="uid://nr6fmaf6yscq" path="res://UI/normal.tres" id="4_sdy2q"]
+[ext_resource type="StyleBox" uid="uid://dkhb4ly0mhx4s" path="res://UI/pressed.tres" id="5_m8qsh"]
+[ext_resource type="StyleBox" uid="uid://dhk5d1kew55o7" path="res://UI/hover.tres" id="6_yfxfi"]
+
+[node name="Tutorial" type="Control" unique_id=1667728416]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m8qsh")
+
+[node name="Label4" type="Label" parent="." unique_id=795335829]
+layout_mode = 0
+offset_left = -198.0
+offset_top = 30.0
+offset_right = 1348.0
+offset_bottom = 263.0
+theme_override_fonts/font = ExtResource("1_c6il8")
+theme_override_font_sizes/font_size = 78
+text = "Goal:
+Collect Items to Escape!"
+horizontal_alignment = 1
+
+[node name="meteos" type="Label" parent="." unique_id=206567394]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 418.0
+offset_right = 376.0
+offset_bottom = 527.0
+theme_override_fonts/font = ExtResource("1_c6il8")
+theme_override_font_sizes/font_size = 52
+text = "Dodge 
+Meteors!"
+horizontal_alignment = 1
+
+[node name="chaarge" type="Label" parent="." unique_id=288823927]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 416.0
+offset_right = 711.0
+offset_bottom = 547.0
+theme_override_fonts/font = ExtResource("1_c6il8")
+theme_override_font_sizes/font_size = 52
+text = "Stall
+Countdown!"
+horizontal_alignment = 1
+
+[node name="key" type="Label" parent="." unique_id=2140526274]
+layout_mode = 0
+offset_left = 841.0
+offset_top = 420.0
+offset_right = 1068.0
+offset_bottom = 529.0
+theme_override_fonts/font = ExtResource("1_c6il8")
+theme_override_font_sizes/font_size = 52
+text = "Unlock
+The Door!"
+horizontal_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=361719691]
+position = Vector2(559, 338)
+scale = Vector2(9, 9)
+texture = ExtResource("2_7m0sj")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=420861999]
+position = Vector2(194, 293)
+scale = Vector2(9, 9)
+texture = ExtResource("3_nsmic")
+region_enabled = true
+region_rect = Rect2(17, 0, 14, 27)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=122034367]
+position = Vector2(953, 339.00003)
+scale = Vector2(9, 9)
+texture = ExtResource("2_7m0sj")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1111125456]
+position = Vector2(190.00002, 367)
+scale = Vector2(9, 9)
+texture = ExtResource("3_nsmic")
+region_enabled = true
+region_rect = Rect2(1, 18, 14, 14)
+
+[node name="Button" type="Button" parent="." unique_id=957295471]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 582.0
+offset_right = 646.0
+offset_bottom = 637.0
+theme_override_fonts/font = ExtResource("1_c6il8")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = ExtResource("4_sdy2q")
+theme_override_styles/pressed = ExtResource("5_m8qsh")
+theme_override_styles/hover = ExtResource("6_yfxfi")
+text = "Return"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
